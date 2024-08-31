@@ -8,7 +8,7 @@ struct node {
 
 int main() {
     struct node *newnode, *temp, *start;
-    int n, i, newData;
+    int n, i, pos, newData;
     
     // Creating the initial linked list
     printf("Enter number of nodes you want to create: ");
@@ -32,12 +32,28 @@ int main() {
     }
     temp->next = NULL;
     
-    // Inserting a new node at the beginning
+    // Inserting a new node at a specific position
     newnode = (struct node*)malloc(sizeof(struct node));
-    printf("Enter data for the new node to insert at the beginning: ");
+    printf("Enter data for the new node to insert: ");
     scanf("%d", &newnode->data);
-    newnode->next = start; // Point new node to the old start
-    start = newnode; // Update start to the new node
+    printf("Enter the position where you want to insert the new node: ");
+    scanf("%d", &pos);
+    
+    if (pos == 1) { // Insert at the beginning
+        newnode->next = start;
+        start = newnode;
+    } else {
+        temp = start;
+        for (i = 1; i < pos - 1 && temp != NULL; i++) {
+            temp = temp->next;
+        }
+        if (temp == NULL) {
+            printf("Position out of range.\n");
+        } else {
+            newnode->next = temp->next;
+            temp->next = newnode;
+        }
+    }
     
     // Display the updated list
     printf("Linked list contains: \n");

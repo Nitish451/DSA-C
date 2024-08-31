@@ -32,12 +32,17 @@ int main() {
     }
     temp->next = NULL;
     
-    // Inserting a new node at the beginning
+    // Inserting a new node at the end
     newnode = (struct node*)malloc(sizeof(struct node));
-    printf("Enter data for the new node to insert at the beginning: ");
+    printf("Enter data for the new node to insert at the end: ");
     scanf("%d", &newnode->data);
-    newnode->next = start; // Point new node to the old start
-    start = newnode; // Update start to the new node
+    newnode->next = NULL; // New node will be the last one
+    
+    temp = start;
+    while(temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newnode; // Update the last node's next pointer
     
     // Display the updated list
     printf("Linked list contains: \n");
