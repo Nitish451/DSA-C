@@ -8,6 +8,7 @@
  int main(){
     struct node *newnode,*temp,*start;
     int n,i;
+    start=NULL;
     printf("enter no of node you want to create");
     scanf("%d",&n);
     newnode=(struct node*)malloc(sizeof(struct node));
