@@ -25,7 +25,8 @@
         scanf("%d",&newnode->data);
         newnode->next = NULL;
         temp->next=newnode;
-        temp=newnode;
+        //temp=newnode;
+        temp=temp->next;
     }
     temp->next=NULL;
      //display
@@ -34,7 +35,8 @@
     temp=start;
     while(temp!=NULL){
         printf(" %d",temp->data);
-        temp=temp->next;
+       temp=temp->next;
+       //temp=newnode;
     }
 
 
