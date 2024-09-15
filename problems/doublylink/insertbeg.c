@@ -7,6 +7,19 @@ typedef struct node
     struct node *prev;
 } dnd;
 
+dnd *insert_beg(dnd *start)
+{
+    dnd *nw, *temp;
+    nw = (dnd *)malloc(sizeof(dnd));
+    printf("enter the data for new node");
+    scanf("%d", &nw->data);
+    nw->next = start;
+     start->prev = nw;
+      nw->prev = NULL;
+    start = nw;
+    return (start);
+}
+
 void display(dnd *start)
 {
     dnd *temp = start;
@@ -39,8 +52,10 @@ int main()
         temp->next = nw;
         nw->prev = temp;
         temp = nw;
-}
-temp->next = NULL;
+    }
+    temp->next = NULL;
+        start = insert_beg(start);
     display(start);
+
     return 0;
 }
