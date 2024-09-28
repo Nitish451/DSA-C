@@ -1,21 +1,16 @@
 #include <stdio.h>
 
-void delbeg(int a[], int *n) {
+void delend(int a[], int *n) {
     if (*n <= 0) {
-        printf("Array is empty. Cannot delete element from the beginning.\n");
+        printf("Array is empty. Cannot delete element from the end.\n");
         return;
-    }
-
-    // Shift all elements to the left
-    for (int i = 0; i < *n - 1; i++) {
-        a[i] = a[i + 1];
     }
 
     // Decrease the size of the array
     (*n)--;
 
     // Print the elements after deletion
-    printf("Elements after deletion from beginning:\n");
+    printf("Elements after deletion from the end:\n");
     for (int i = 0; i < *n; i++) {
         printf("%d\n", a[i]);
     }
@@ -40,8 +35,8 @@ int main() {
         printf("%d\n", a[i]);
     }
 
-    // Delete an element from the beginning
-    delbeg(a, &n);
+    // Delete an element from the end
+    delend(a, &n);
 
     return 0;
 }

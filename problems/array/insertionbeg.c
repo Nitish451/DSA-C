@@ -1,5 +1,28 @@
 #include <stdio.h>
 #include <conio.h>
+
+int insertbeg(int a[],int data,int n){
+      printf("enter the element for inserting in begining: ");
+    scanf("%d", &data);
+    printf("element after inserting in begining of array: \2");
+
+    
+    for (int i = n; i > 0; i--)
+    {
+        a[i] = a[i - 1];
+    }
+    a[0] = data;
+    n++;
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d\n", a[i]);
+    }
+    return 0;
+}
+
+
+
+
 int main()
 {
     int n, a[40], data;
@@ -16,18 +39,6 @@ int main()
         printf("%d\n", a[i]);
     }
     // main logic for inserting in beginig
-    printf("enter the element for inserting in begining: ");
-    scanf("%d", &data);
-    printf("element after inserting in begining of array: ");
-    for (int i = n; i > 0; i--)
-    {
-        a[i] = a[i - 1];
-    }
-    a[0] = data;
-    n++;
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\n\t", a[i]);
-    }
+  insertbeg( a, data,n);
     return 0;
 }
