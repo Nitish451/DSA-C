@@ -30,7 +30,7 @@ PROGRAMMING EXAMPLE: [_][12_][65_][_34][56_][_]
     step 6: exit                                            n=5
 ```
 # WRITE A ALGORITHM FOR DELETION
-
+```
 step 1: Begin
 step 2: if front=-1 then print
                   print "underflow & exit"
