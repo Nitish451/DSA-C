@@ -7,9 +7,9 @@ printf("enter the element for inserting in end: ");
     printf("element after inserting in end of array: \n");
 
 
-    for(int i=0; i>n; i++){
-        a[i]=a[i+1];
-    }
+    // for(int i=0; i<n; i++){
+    //     a[i]=a[i+1];
+    // }
     a[n]=data;
     n++;
        for(int i=0; i<n; i++){
