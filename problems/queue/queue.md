@@ -1,4 +1,4 @@
-1. QUEUE
+# QUEUE
 ```
 Queue is a linear collection of data item thats follows FIFO(first-in first-out) where insertion and deletion take place on opposite end .
 The insetion end is called REAR;
