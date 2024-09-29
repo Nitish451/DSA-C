@@ -1,10 +1,7 @@
 #include <stdio.h>
 
 void delbeg(int a[], int *n) {
-    if (*n <= 0) {
-        printf("Array is empty. Cannot delete element from the beginning.\n");
-        return;
-    }
+  
 
     // Shift all elements to the left
     for (int i = 0; i < *n - 1; i++) {

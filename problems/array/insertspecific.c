@@ -11,7 +11,7 @@ int insertspecific(int a[],int n, int data ,int pos){
 
     for (int i = n; i > pos; i--)
     {
-        a[i] = a[i - 1];
+        a[i] = a[i - 1];  //shifting right 
     }
     a[pos - 1] = data;
     n++;
