@@ -10,25 +10,24 @@ typedef struct node
 
 nd *delete_end(nd *start)
 {
-nd *temp,*temp2;
-temp=start;
-temp2=start;
-printf("linklist after deletion from end\n");
-if(start==NULL){
-    printf("node is already empty");
-}
-else{
-    while(temp->next!=NULL){
-        temp2=temp;
-        temp=temp->next;
+    nd *temp, *temp2;
+    temp = start;
+    temp2 = start;
+    printf("linklist after deletion from end\n");
+    if (start == NULL)
+    {
+        printf("node is already empty");
     }
-    temp2->next=NULL;
-    free(temp);
-    temp=NULL;
-}
-return(start);
- 
-   
+    else
+    {
+        while (temp->next != NULL)
+        {
+            temp2 = temp;
+            temp = temp->next;
+        }
+        temp2->next = NULL;
+        free(temp);
+    }
 
     return start;
 }

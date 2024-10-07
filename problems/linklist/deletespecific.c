@@ -8,28 +8,23 @@ typedef struct node
     struct node *next;
 } nd;
 
-nd *delete_end(nd *start)
+nd *delete_specific(nd *start)
 {
-    nd *temp, *temp2;
+
+    nd *temp;
     temp = start;
-    temp2 = start;
-    printf("linklist after deletion from end\n");
-    if (start == NULL)
+    nd *temp2;
+    int position, i = 1;
+    printf("enter the position wnat to be deleted on \n");
+    scanf("%d", &position);
+    while (i < position - 1)
     {
-        printf("node is already empty");
+        temp = temp->next;
+        i++;
     }
-    else
-    {
-        while (temp->next != NULL)
-        {
-            temp2 = temp;
-            temp = temp->next;
-        }
-        temp2->next = NULL;
-        free(temp);
-        temp = NULL;
-    }
-    return (start);
+    temp2 = temp->next;
+    temp->next = temp2->next;
+    free(temp2);
 
     return start;
 }
@@ -71,7 +66,7 @@ int main()
     temp->next = NULL;
     // display
     //  Insert a new node at the end
-    delete_end(start);
+    delete_specific(start);
     display(start);
     return 0;
 }
